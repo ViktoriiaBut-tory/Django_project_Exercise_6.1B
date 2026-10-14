@@ -1,0 +1,84 @@
+1. cd todo
+
+2. git status
+
+(venv) PS E:\uk sw training\fortodo\todo> python manage.py check
+output should be like : System check identified no issues (0 silenced).
+
+3.python manage.py check
+
+Check	Evidence	Result	Action
+Django system check	python manage.py check	PASS	No issues found
+
+4. python manage.py runserver
+
+check application working with all the possible validations
+
+check                     evidence to collect
+Django stystem check      terminal output
+Application Startup       browser URL and wheter it loads
+CRUD OPerations          which actions worked and failed
+
+Check	Evidence	Result
+Django system check	python manage.py check	PASS
+Application Startup	http://127.0.0.1:8000/	PASS
+
+Check	Evidence	Result
+Create	New task added successfully	PASS
+Read	Tasks displayed correctly	PASS
+Update	Task marked as completed	PASS
+Delete	Task deleted successfully	PASS
+Validation	Empty task was not created	PASS
+
+5.STEP: Check csrf Projecttion in Django forms 
+inspect all the form and check csrf tokens are there are not 
+
+Check	Evidence	Result	Action
+CSRF Protection	{% csrf_token %} in all POST forms	PASS	Verified 3 forms
+Templates	task_list.html inspection	FIXED*	Corrected HTML table and form attributes
+
+6.After that check views.py 
+
+Check templates, that the template variable {{}} are showing expected output or not
+collect evidence and correct if there is any issues
+
+views.py — PASS
+
+7. check if your application has authentication and authorizations , if it is there 
+then check its working fine or not other you can write not needed in this Projecttion
+
+Check	Evidence	Result	Action
+Authentication	No login system implemented	N/A	Not required for this exercise
+Authorization	No user permissions implemented	N/A	Not required for this exercise
+
+8.search your project for any condifential data like  pwd, apikey, token etc
+
+make debug = False
+
+put SECRET_KEY IN ENV file 
+and use it from there
+
+install python-dotenv to work with .env files
+
+pip install python-dotenv
+
+create file with name .env on the same location as manage.py
+and put all condifential data there 
+
+then in setting.py use the data from .env file 
+check your gitignore i.e it must contain the filed that you don't want to upload
+
+.gitignore: PASS!
+
+
+createa a readme,md file 
+
+ask AI for suggestions
+
+check                     evidence                     result    action         escalation if required
+Django system chaeck    python manage.py check         Pass  Run the command  Ask senior if errors are unclear
+CSRF Protections            
+TEmplates 
+authenticationSecreat
+enviroment setting
+third party assets
